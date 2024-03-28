@@ -6,8 +6,8 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="Features",
-                 glue="StepDefinitions",
-                 tags="@SanityTest")
+                 glue="StepDefinitions"
+                 )
 
 public class LoginRun {
 	

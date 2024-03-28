@@ -15,8 +15,7 @@ public class S3NP {
 	WebElement Buy;
 	@FindBy(xpath="//div[@id='body']/div[4]/div/div/div[1]/div[2]/ul/li[2]/a")
 	WebElement np;
-	@FindBy(xpath="//div[@id='newprojects']/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div/div[1]/div/div[1]")
-	WebElement loc;
+	
 	@FindBy(xpath="//div[@id='newprojects']/div[2]/div[2]/div[4]/div[1]/div[2]/span[1]")
 	WebElement conBul;
 		
@@ -28,12 +27,5 @@ public class S3NP {
 	{
 	   np.click();
 	}
-	public void patLoc() {
-	loc.click();
 	
-
-}
-	public void contBul() {
-		conBul.click();
-	}
 }

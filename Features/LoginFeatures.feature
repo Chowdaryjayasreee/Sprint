@@ -9,59 +9,47 @@ And I enter password as "Priya@123"
 And I click Login
 And I click on Continue
 Then I am Logged in Successfully
-@SanityTest
+
 Scenario: To navigate into the Buy dropdown
 Given Iam on magicbricks page
-And I click on Buy dropdown
+When I click on Buy dropdown
 And I click on Popular Choices
 And I click on Ready to move
 Then ready to move flats page will be displayed
 
-Scenario: To navigate into the Buy dropdown
+Scenario: To search details
 Given Iam on magicbricks page
-And I click on Buy dropdown
+When I click on Buy dropdown
 And I click on Popular Choices
 And I click on Ready to move
-And ready to move flats page will be displayed
 And I click on Properties 
-Then I click on Get Info
+And I click on Get Info
+Then I get detail information
 
   
-Scenario: To navigate into the Buy dropdown
+Scenario: To Display new project page
 Given Iam on Magic Bricks App Login Page
-And I click on Buy dropdown
+When I click on Buy dropdown
 And I click on Popular Choices
 And I click on Ready to move
-And ready to move flats page will be displayed
 And I click on New Projects
-And Page of new project page will be displayed
-And I click on Particular Location
-And projects of particular location will be displayed
-Then I click on Contact Builder
+Then New project page will be displayed
 
-
-
-  
-Scenario: To navigate into the Buy dropdown
-Given Iam on Magic Bricks App Login Page
-And I click on Buy dropdown
+Scenario: To Display Top Agent Page
+Given I am on Magic Bricks App Login Page
+When I click on Buy dropdown
 And I click on Popular Choices
 And I click on Ready to move
-And ready to move flats page will displayed
 And I click on New Projects
-And Page of new project page will be displayed
-And I click on Particular Location
-And projects of particular location will be displayed
-Then click on View Details
+Then Top agent page will be displayed
 
-Scenario: To navigate into the Buy dropdown
-Given Iam on Magic Bricks App Login Page
-And I click on Buy dropdown
+Scenario: To click on View Details
+Given I am on Magic Bricks App Login Page
+When I click on Buy dropdown
 And I click on Popular Choices
 And I click on Ready to move
-And ready to move flats page will be displayed
 And click on Top Agents
-And Top agents page will be displayed
-Then click on Contact Agent
+And click on view Details
+Then I see the details
 
 

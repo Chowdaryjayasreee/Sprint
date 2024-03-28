@@ -4,28 +4,24 @@ import java.time.Duration;
 import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-//import org.openqa.selenium.chrome.ChromeDriver;
-//import org.openqa.selenium.chrome.ChromeOptions;
-//import org.openqa.selenium.edge.EdgeDriver;
-//import org.openqa.selenium.edge.EdgeOptions;
 
-import MBPageFactory.S1page;
-import MBPageFactory.S2Info;
-import MBPageFactory.S3NP;
-
-
-import MBPageFactory.S4ViewDetails;
-import MBPageFactory.S5TopAgent;
-
-import MBPageFactory.loginPF;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+//import io.cucumber.messages.types.Duration;
 
-public class Login {
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import MBPageFactory.S1page;
+import MBPageFactory.S2Info;
+import MBPageFactory.S3NP;
+import MBPageFactory.S4TopAgent;
+import MBPageFactory.S5Viewdetails;
+import MBPageFactory.loginPF;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+public class LoginPage {
 	WebDriver driver;
 	@Before 
 	public void before()
@@ -43,15 +39,17 @@ public class Login {
 	@Given("I am on Magic Bricks App Login")
 	public void i_am_on_magic_bricks_app_login() {
 	    // Write code here that turns the phrase above into concrete actions
-	
-	    loginPF lp=new loginPF(driver);
-	    lp.login();
-	    lp.logging();
+		
+		
+		    loginPF lp=new loginPF(driver);
+		    lp.login();
+		    lp.logging(); 
 	}
 
 	@When("I enter Email ID as {string}")
 	public void i_enter_email_id_as(String string) {
 	    // Write code here that turns the phrase above into concrete actions
+	    //throw new io.cucumber.java.PendingException();
 		loginPF lp=new loginPF(driver);
 		String child_handle="";
 	    Set<String> tab_handles = driver.getWindowHandles();
@@ -61,11 +59,13 @@ public class Login {
 	    driver.switchTo().window(child_handle);
 	    lp.mail(string);
  
+
 	}
-	
+
 	@When("I click on Next")
 	public void i_click_on_next() {
 	    // Write code here that turns the phrase above into concrete actions
+	   // throw new io.cucumber.java.PendingException();
 		loginPF nex=new loginPF(driver);
 		nex.nxt();
 	}
@@ -73,163 +73,156 @@ public class Login {
 	@When("I enter password as {string}")
 	public void i_enter_password_as(String string) {
 	    // Write code here that turns the phrase above into concrete actions
+	    //throw new io.cucumber.java.PendingException();
 		loginPF pw=new loginPF(driver);
 		pw.password(string);
+
 	}
 
 	@When("I click Login")
 	public void i_click_login() {
 	    // Write code here that turns the phrase above into concrete actions
+	   // throw new io.cucumber.java.PendingException();
 		loginPF lo=new loginPF(driver);
 		lo.log();
 	}
+
 	@When("I click on Continue")
 	public void i_click_on_continue() {
 	    // Write code here that turns the phrase above into concrete actions
+	    //throw new io.cucumber.java.PendingException();
 		loginPF co=new loginPF(driver);
 		co.conti();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-	    
-	}
 
+
+
+	}
 
 	@Then("I am Logged in Successfully")
 	public void i_am_logged_in_successfully() {
 	    // Write code here that turns the phrase above into concrete actions
+	    //throw new io.cucumber.java.PendingException();
 		loginPF cr=new loginPF(driver);
 		cr.end();
+
 	}
 
 	@Given("Iam on magicbricks page")
 	public void iam_on_magicbricks_page() {
 	    // Write code here that turns the phrase above into concrete actions
-	    //throw new io.cucumber.java.PendingException();
-		
+	   // throw new io.cucumber.java.PendingException();
 	}
 
-	@Given("I click on Buy dropdown")
+	@When("I click on Buy dropdown")
 	public void i_click_on_buy_dropdown() {
 	    // Write code here that turns the phrase above into concrete actions
-	   // throw new io.cucumber.java.PendingException();
+	    //throw new io.cucumber.java.PendingException();
 		S1page s1=new S1page(driver);
 		s1.buy();
 		
+
 	}
 
-	@Given("I click on Popular Choices")
+	@When("I click on Popular Choices")
 	public void i_click_on_popular_choices() {
 	    // Write code here that turns the phrase above into concrete actions
-	   
+	   // throw new io.cucumber.java.PendingException();
 	}
 
-	@Given("I click on Ready to move")
+	@When("I click on Ready to move")
 	public void i_click_on_ready_to_move() {
 	    // Write code here that turns the phrase above into concrete actions
-	    S1page ss=new S1page(driver);
+	    //throw new io.cucumber.java.PendingException();
+		S1page ss=new S1page(driver);
 	    ss.move();
+
 	}
 
-//	@Then("ready to move flats page will be displayed")
-//	public void ready_to_move_flats_page_will_be_displayed() {
-//	    // Write code here that turns the phrase above into concrete actions
-//	    throw new io.cucumber.java.PendingException();
-//	}
-
-	@Given("ready to move flats page will be displayed")
+	@Then("ready to move flats page will be displayed")
 	public void ready_to_move_flats_page_will_be_displayed() {
 	    // Write code here that turns the phrase above into concrete actions
-	    
+	    //throw new io.cucumber.java.PendingException();
 	}
 
-	@Given("I click on Properties")
+	@When("I click on Properties")
 	public void i_click_on_properties() {
 	    // Write code here that turns the phrase above into concrete actions
-	    S2Info s2=new S2Info(driver);
+	    //throw new io.cucumber.java.PendingException();
+		S2Info s2=new S2Info(driver);
 	    s2.prop();
+
 	}
 
-	@Then("I click on Get Info")
+	@When("I click on Get Info")
 	public void i_click_on_get_info() {
 	    // Write code here that turns the phrase above into concrete actions
-	   S2Info s2=new S2Info(driver);
-	   s2.info();
+	    //throw new io.cucumber.java.PendingException();
+		S2Info s2=new S2Info(driver);
+		   s2.info();
+
+	}
+
+	@Then("I get detail information")
+	public void i_get_detail_information() {
+	    // Write code here that turns the phrase above into concrete actions
+	    //throw new io.cucumber.java.PendingException();
 	}
 
 	@Given("Iam on Magic Bricks App Login Page")
 	public void iam_on_magic_bricks_app_login_page() {
 	    // Write code here that turns the phrase above into concrete actions
-	    
+	    //throw new io.cucumber.java.PendingException();
 	}
 
-	@Given("I click on New Projects")
+	@When("I click on New Projects")
 	public void i_click_on_new_projects() {
 	    // Write code here that turns the phrase above into concrete actions
-	    S3NP s3=new S3NP(driver);
-	    s3.NewProject();
+	    //throw new io.cucumber.java.PendingException();
+		 S3NP s3=new S3NP(driver);
+		    s3.NewProject();
+
 	}
 
-	@Given("Page of new project page will be displayed")
-	public void page_of_new_project_page_will_be_displayed() {
+	@Then("New project page will be displayed")
+	public void new_project_page_will_be_displayed() {
 	    // Write code here that turns the phrase above into concrete actions
-	    
+	    //throw new io.cucumber.java.PendingException();
 	}
 
-	@Given("I click on Particular Location")
-	public void i_click_on_particular_location() {
+	@Given("I am on Magic Bricks App Login Page")
+	public void i_am_on_magic_bricks_app_login_page() {
 	    // Write code here that turns the phrase above into concrete actions
-	    S3NP pl=new S3NP(driver);
-	    pl.patLoc();
+	    //throw new io.cucumber.java.PendingException();
 	}
 
-	@Given("projects of particular location will be displayed")
-	public void projects_of_particular_location_will_be_displayed() {
+	@Then("Top agent page will be displayed")
+	public void top_agent_page_will_be_displayed() {
 	    // Write code here that turns the phrase above into concrete actions
-	    
+	    //throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("I click on Contact Builder")
-	public void i_click_on_contact_builder() {
-	    // Write code here that turns the phrase above into concrete actions
-	    S3NP cb=new S3NP(driver);
-	    cb.contBul();
-	}
-
-	@Given("ready to move flats page will displayed")
-	public void ready_to_move_flats_page_will_displayed() {
-	    // Write code here that turns the phrase above into concrete actions
-	    
-	}
-
-	@Then("click on View Details")
-	public void click_on_view_details() {
-	    // Write code here that turns the phrase above into concrete actions
-	    S4ViewDetails vd=new S4ViewDetails(driver);
-	    vd.ViewDetails();
-	}
-
-	@Given("click on Top Agents")
+	@When("click on Top Agents")
 	public void click_on_top_agents() {
 	    // Write code here that turns the phrase above into concrete actions
-	    S5TopAgent ta=new S5TopAgent(driver);
+	    //throw new io.cucumber.java.PendingException();
+		S4TopAgent ta=new S4TopAgent(driver);
 	    ta.Agent();
+
 	}
 
-	@Given("Top agents page will be displayed")
-	public void top_agents_page_will_be_displayed() {
+	@When("click on view Details")
+	public void click_on_view_details() {
 	    // Write code here that turns the phrase above into concrete actions
-	    
+	    //throw new io.cucumber.java.PendingException();
+		S5Viewdetails s5= new S5Viewdetails(driver);
+		s5.details();
 	}
 
-	@Then("click on Contact Agent")
-	public void click_on_contact_agent() {
+	@Then("I see the details")
+	public void i_see_the_details() {
 	    // Write code here that turns the phrase above into concrete actions
-	    S5TopAgent ca=new S5TopAgent(driver);
-	    ca.ConAg();
+	    //throw new io.cucumber.java.PendingException();
 	}
-	
-
-
-	
 }
-
-
